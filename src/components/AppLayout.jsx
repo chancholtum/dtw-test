@@ -36,7 +36,7 @@ const AppContainer = styled.section`
 `;
 
 function AppLayout() {
-  const [sortedBy, setSortBy] = useState("all");
+  const [sortedBy, setSortBy] = useState("All");
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,7 +55,7 @@ function AppLayout() {
         <Container>
           <AppContainer>
             <ProgressBar todos={todos.todos} />
-            <HeadTasks setSortBy={setSortBy} />
+            <HeadTasks setSortBy={setSortBy} sortedBy={sortedBy} />
             <Todos
               todos={todos}
               doneSorted={doneSorted}

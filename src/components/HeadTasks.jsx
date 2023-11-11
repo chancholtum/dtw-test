@@ -77,18 +77,18 @@ const ArrowImg = styled.img`
   height: 14px;
 `;
 
-function HeadTasks({ setSortBy }) {
+function HeadTasks({ sortedBy, setSortBy }) {
   const [isToggle, setIsToggle] = useState(false);
   function handleAllSorted() {
-    setSortBy("all");
+    setSortBy("All");
     setIsToggle(!isToggle);
   }
   function handleDoneSorted() {
-    setSortBy("done");
+    setSortBy("Done");
     setIsToggle(!isToggle);
   }
   function handleUnDoneSorted() {
-    setSortBy("undone");
+    setSortBy("Undone");
     setIsToggle(!isToggle);
   }
 
@@ -101,7 +101,7 @@ function HeadTasks({ setSortBy }) {
       <TasksText>Tasks</TasksText>
       <DropDown>
         <SelectContainerDefault onClick={handleToggle}>
-          <SelectText>All</SelectText>
+          <SelectText>{sortedBy}</SelectText>
           <ArrowImg src="chev-down.svg" />
         </SelectContainerDefault>
         {isToggle && (

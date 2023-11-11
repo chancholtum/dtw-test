@@ -12,9 +12,9 @@ function Todos({ todos, doneSorted, unDoneSorted, sortedBy }) {
   let sorted;
   const allSorted = todos.todos;
 
-  if (sortedBy === "all") sorted = allSorted;
-  if (sortedBy === "done") sorted = doneSorted;
-  if (sortedBy === "undone") sorted = unDoneSorted;
+  if (sortedBy === "All") sorted = allSorted;
+  if (sortedBy === "Done") sorted = doneSorted;
+  if (sortedBy === "Undone") sorted = unDoneSorted;
 
   return (
     <TodosContainer>
